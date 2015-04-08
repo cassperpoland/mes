@@ -132,6 +132,9 @@
 
         <menu:menu-item name="workstations" category="basic"
                         view="workstationsList"/>
+                        
+        <menu:menu-item name="purchases" category="basic"
+                        view="purchasesList"/>
 
         <view:view resource="view/reportColumnWidthDetails.xml"/>
         <view:view resource="view/companiesList.xml"/>
@@ -145,10 +148,10 @@
         <view:view resource="view/shiftTimetableExceptionDetails.xml"/>
         <view:view resource="view/productsList.xml"/>
         <view:view resource="view/productDetails.xml"/>
-       <!-- 
-        <view:view resource="view/purchaseList.xml"/>
+       
+        <view:view resource="view/purchasesList.xml"/>
         <view:view resource="view/purchaseDetails.xml"/>
-         --> 
+       
         <view:view resource="view/productSubstituteDetails.xml"/>
         <view:view resource="view/productSubstituteComponentDetails.xml"/>
         <view:view resource="view/productsFamilies.xml"/>

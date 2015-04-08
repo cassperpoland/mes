@@ -74,4 +74,8 @@ public class PurchaseHooks {
             return false;
     	}
         }
+    
+    public void updateUnitIfProductChanged(final DataDefinition purchaseDD, final Entity purchase){
+    	//TODO: fill it
+    }
 }
