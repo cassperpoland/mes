@@ -64,6 +64,7 @@
 		<string name="nodeNumber" />
 		<enum name="entityType" values="01particularProduct,02productsFamily"
 			default="01particularProduct" required="true" />
+			
 	</fields>
 
 	<hooks>

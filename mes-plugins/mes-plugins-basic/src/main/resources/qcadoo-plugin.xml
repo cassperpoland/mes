@@ -92,6 +92,8 @@
         <model:model model="reportColumnWidth" resource="model/reportColumnWidth.xml"/>
 
         <model:model model="workstation" resource="model/workstation.xml"/>
+        
+        <model:model model="purchase" resource="model/purchase.xml"/>
 
         <model:dictionary name="categories"/>
         <model:dictionary name="posts"/>
@@ -143,6 +145,10 @@
         <view:view resource="view/shiftTimetableExceptionDetails.xml"/>
         <view:view resource="view/productsList.xml"/>
         <view:view resource="view/productDetails.xml"/>
+       <!-- 
+        <view:view resource="view/purchaseList.xml"/>
+        <view:view resource="view/purchaseDetails.xml"/>
+         --> 
         <view:view resource="view/productSubstituteDetails.xml"/>
         <view:view resource="view/productSubstituteComponentDetails.xml"/>
         <view:view resource="view/productsFamilies.xml"/>
@@ -178,6 +184,11 @@
                            plugin="qcadooModel">
             <model:belongsTo name="product" model="product"
                              plugin="basic"/>
+        </model:model-field>
+        
+        <model:model-field model="product" plugin="basic">
+			<model:hasMany name="purchases" model="purchase"
+				joinField="product" cascade="nullify" />
         </model:model-field>
 
         <model:model-hook model="unitConversionItem" plugin="qcadooModel">
