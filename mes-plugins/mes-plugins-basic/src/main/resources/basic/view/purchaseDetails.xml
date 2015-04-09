@@ -43,6 +43,25 @@
 					</component>
 				</layoutElement>
 				
+				<layoutElement column="1" row="2">
+						<component type="lookup" name="currency" reference="currency"
+							field="currency">
+							<option type="column" name="name" fields="name" link="true"
+								width="200" />
+							<option type="column" name="alphabeticalCode" fields="alphabeticalCode" />
+
+							<option type="searchable" value="name,alphabeticalCode" />
+							<option type="orderable" value="name,alphabeticalCode" />
+
+							<option type="expression"
+								value="'&lt;b&gt;' + #number + '&lt;/b&gt; - ' + #name" />
+							<option type="fieldCode" value="number" />
+
+							<listener event="onSelectedEntityChange" class="com.qcadoo.mes.basic.util.UnitService"
+								method="fillProductUnit" />
+						</component>
+				</layoutElement>
+				
 				<layoutElement column="2" row="1">
 						<component type="lookup" name="product" reference="product"
 							field="product">
@@ -82,7 +101,7 @@
 							<option type="alignment" value="right" />
 						</component>
 					</layoutElement>
-				<layoutElement column="1" row="2">
+				<layoutElement column="1" row="3">
 						<component type="calendar" name="date" field="date"
 							reference="date">
 							<option type="labelWidth" value="50" />
