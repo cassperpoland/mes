@@ -41,12 +41,12 @@ public class PurchaseHooks {
     @Autowired
     private PurchaseService purchaseService;
 
-	public boolean checkIfPriceIsCorrect(final DataDefinition purchaseDD,
+	public boolean checkIfQuantityIsCorrect(final DataDefinition purchaseDD,
 			final Entity purchase) {
 		if (purchase.getId() != null) {
 
-			if (((Integer) purchase.getField(PRICE)).compareTo(0) == -1) {
-				purchase.addError(purchaseDD.getField(PRICE),
+			if (((Integer) purchase.getField(QUANTITY)).compareTo(0) == -1) {
+				purchase.addError(purchaseDD.getField(QUANTITY),
 						"basic.purchase.price.priceIsNegative");
 				return false;
 			}
@@ -54,11 +54,11 @@ public class PurchaseHooks {
 		return true;
 	}
 
-    public boolean checkIfQuantityIsCorrect(final DataDefinition purchaseDD, final Entity purchase) {
+    public boolean checkIfPriceIsCorrect(final DataDefinition purchaseDD, final Entity purchase) {
 		if (purchase.getId() != null) {
 
-			if (purchase.getDecimalField(QUANTITY).compareTo(BigDecimal.ZERO)<0) {
-				purchase.addError(purchaseDD.getField(QUANTITY),
+			if (purchase.getDecimalField(PRICE).compareTo(BigDecimal.ZERO)<0) {
+				purchase.addError(purchaseDD.getField(PRICE),
 						"basic.purchase.quantity.quantityIsNegative");
 				return false;
 			}
@@ -75,7 +75,4 @@ public class PurchaseHooks {
     	}
         }
     
-    public void updateUnitIfProductChanged(final DataDefinition purchaseDD, final Entity purchase){
-    	//TODO: fill it
-    }
 }

@@ -54,7 +54,6 @@
 			method="checkIfNoPurchaseWithSameProductAndPriceExist" />
 		<onCreate class="com.qcadoo.mes.basic.ProductService" method="fillUnit" />
 		<onView class="com.qcadoo.mes.basic.ProductService" method="fillUnit" />
-		<onUpdate class="com.qcadoo.mes.basic.hooks.PurchaseHooks" method="updateUnitIfProductChanged" />
 
 	</hooks>
 

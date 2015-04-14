@@ -44,25 +44,6 @@
 				</layoutElement>
 				
 				<layoutElement column="1" row="2">
-						<component type="lookup" name="currency" reference="currency"
-							field="currency">
-							<option type="column" name="name" fields="name" link="true"
-								width="200" />
-							<option type="column" name="alphabeticalCode" fields="alphabeticalCode" />
-
-							<option type="searchable" value="name,alphabeticalCode" />
-							<option type="orderable" value="name,alphabeticalCode" />
-
-							<option type="expression"
-								value="'&lt;b&gt;' + #number + '&lt;/b&gt; - ' + #name" />
-							<option type="fieldCode" value="number" />
-
-							<listener event="onSelectedEntityChange" class="com.qcadoo.mes.basic.util.UnitService"
-								method="fillProductUnit" />
-						</component>
-				</layoutElement>
-				
-				<layoutElement column="2" row="1">
 						<component type="lookup" name="product" reference="product"
 							field="product">
 							<option type="column" name="name" fields="name" link="true"
@@ -80,34 +61,50 @@
 								method="fillProductUnit" />
 						</component>
 				</layoutElement>
-					
-				<layoutElement column="2" row="2">
-						<component type="input" name="quantity"
-							reference="quantity" field="quantity">
-							<option type="labelWidth" value="55" />
-							<option type="alignment" value="right" />
-						</component>
-					</layoutElement>
-					<layoutElement column="2" row="3">
-						<component type="input" name="unit" reference="unit"
-							defaultEnabled="false">
-							<option type="labelWidth" value="55" />
-							<option type="alignment" value="right" />
-						</component>
-					</layoutElement>
-					<layoutElement column="2" row="4">
-						<component type="input" name="price" reference="price">
-							<option type="labelWidth" value="55" />
-							<option type="alignment" value="right" />
-						</component>
-					</layoutElement>
 				<layoutElement column="1" row="3">
 						<component type="calendar" name="date" field="date"
 							reference="date">
 							<option type="labelWidth" value="50" />
 							<option type="withTimePicker" value="true" />
 						</component>
+				</layoutElement>
+				
+				<layoutElement column="2" row="1">
+						<component type="input" name="quantity"
+							reference="quantity" field="quantity">
+							<option type="labelWidth" value="55" />
+							<option type="alignment" value="right" />
+						</component>
 					</layoutElement>
+					<layoutElement column="2" row="2">
+						<component type="input" name="unit" reference="unit"
+							defaultEnabled="false">
+							<option type="labelWidth" value="55" />
+							<option type="alignment" value="right" />
+						</component>
+					</layoutElement>
+					<layoutElement column="2" row="3">
+						<component type="input" name="price" reference="price">
+							<option type="labelWidth" value="55" />
+							<option type="alignment" value="right" />
+						</component>
+					</layoutElement>
+					<layoutElement column="2" row="4">
+						<component type="lookup" name="currency" reference="currency"
+							field="currency">
+							<option type="column" name="currency" fields="currency" link="true"
+								width="200" />
+							<option type="column" name="alphabeticCode" fields="alphabeticCode" />
+
+							<option type="searchable" value="name,alphabeticCode" />
+							<option type="orderable" value="name,alphabeticCode" />
+
+							<option type="expression"
+								value="'&lt;b&gt;' + #alphabeticCode + '&lt;/b&gt; - ' + #currency" />
+							<option type="fieldCode" value="alphabeticCode" />
+
+						</component>
+				</layoutElement>
 			</component>
 
 			<option type="header" value="true" />
